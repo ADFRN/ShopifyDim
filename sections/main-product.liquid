@@ -656,28 +656,50 @@
                       <div id="customizationPreview"></div>
                       <script type="text/javascript">
                       document.addEventListener("DOMContentLoaded", function() {
-                        var customizationPreview = document.getElementById("customizationPreview");
-                        var typoSelect = document.getElementById("typo");
-                        var couleurSelect = document.getElementById("couleur");
-                      
+                      var customizationPreview = document.getElementById("customizationPreview");
+                      var typoSelect = document.getElementById("typo");
+                      var couleurSelect = document.getElementById("couleur");
+
+                      // créer une instance de police personnalisée pour chaque police à importer
+                      var font1 = new FontFace("Ballentine", "url(https://fonts.gstatic.com/s/ballentine/v4/1XKvE9DZfJGnixontKk.ttf)");
+                      var font2 = new FontFace("Chancelery", "url(https://fonts.gstatic.com/s/chancery/v13/1LygGpMieaalF_2oapeGKQ.ttf)");
+                      var font3 = new FontFace("Times", "url(https://fonts.gstatic.com/s/timesnewroman/timesnewroman/v14/1Ptpg8fLXP2dlAXR-HlJJNJPAMif.ttf)");
+
+                      // charger les polices personnalisées
+                      Promise.all([font1.load(), font2.load(), font3.load()]).then(function() {
+                        // lorsque les polices sont chargées, les ajouter à la feuille de style
+                        document.fonts.add(font1);
+                        document.fonts.add(font2);
+                        document.fonts.add(font3);
+
                         // fonction pour mettre à jour la div customizationPreview
                         function updatePreview() {
-                          var typoValue = document.getElementById("typo").value;
-                          var couleurValue = document.getElementById("couleur").value;
+                          var typoValue = typoSelect.value;
+                          var couleurValue = couleurSelect.value;
                           var customizationTextFieldValue = document.getElementById("customizationTextField").value;
                           customizationPreview.innerHTML = customizationTextFieldValue;
-                          customizationPreview.style.fontFamily = typoValue;
+
+                          // appliquer la police correspondante en fonction de la valeur sélectionnée dans le sélecteur #typo
+                          if (typoValue === "Ballentine") {
+                            customizationPreview.style.fontFamily = font1.family;
+                          } else if (typoValue === "Chancelery") {
+                            customizationPreview.style.fontFamily = font2.family;
+                          } else if (typoValue === "Times") {
+                            customizationPreview.style.fontFamily = font3.family;
+                          }
+
                           customizationPreview.style.color = couleurValue;
                         }
-                      
+
                         // mettre à jour la div customizationPreview lorsqu'il y a un changement dans les sélecteurs
                         typoSelect.addEventListener("change", updatePreview);
                         couleurSelect.addEventListener("change", updatePreview);
                         document.getElementById("customizationTextField").addEventListener("input", updatePreview);
-                      
+
                         // mettre à jour la div customizationPreview avec les valeurs par défaut au chargement de la page
                         updatePreview();
-                      });
+  });
+});
                         </script>
                     {% endif %}
 
