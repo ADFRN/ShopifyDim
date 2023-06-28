@@ -618,13 +618,11 @@
                       <p class="line-item-property__field">
                         <label for="texte-de-personnalisation">Texte de Personnalisation</label>
                         <input
-                        name="properties[Texte de Personnalisation]"
-                        id="customizationTextField"
-                        class="border-2 bg-gray-800 border-slate-600 rounded-md block w-full placeholder-slate-400 text-white font-semibold uppercase resize-none"
-                        placeholder="Votre nom, pseudo, surnom, le prénom de votre maman ici"
-                        maxLength="36"
-                        rows="3"
-                        required
+                          required
+                          class="required"
+                          id="texte-de-personnalisation"
+                          type="text"
+                          name="properties[Texte de Personnalisation]"
                         >
                       </p>
                       <p class="line-item-property__field">
@@ -653,22 +651,8 @@
                           <option value="Doré">Doré</option>
                         </select>
                       </p>
-                      <div id="customizationPreview"></div>
                     {% endif %}
-                    <script type="text/javascript">
-                    document.addEventListener("DOMContentLoaded", function() {
-                      var customizationPreview = document.getElementById("customizationPreview");
-                      customizationPreview.innerHTML = "VOTRE\nNOM\nICI";
-                    
-                      var customizationTextField = document.getElementById("customizationTextField");
-                      customizationTextField.addEventListener("input", function() {
-                        var lines = this.value.split("\n").length;
-                        if (lines < 4) {
-                          customizationPreview.innerHTML = this.value;
-                        }
-                      });
-                    });
-                      </script>
+
                     <input
                       type="hidden"
                       name="id"
