@@ -618,11 +618,13 @@
                       <p class="line-item-property__field">
                         <label for="texte-de-personnalisation">Texte de Personnalisation</label>
                         <input
-                          required
-                          class="required"
-                          id="texte-de-personnalisation"
-                          type="text"
-                          name="properties[Texte de Personnalisation]"
+                        name="properties[Texte de Personnalisation]"
+                        id="customizationTextField"
+                        class="border-2 bg-gray-800 border-slate-600 rounded-md block w-full placeholder-slate-400 text-white font-semibold uppercase resize-none"
+                        placeholder="Votre nom, pseudo, surnom, le prénom de votre maman ici"
+                        maxLength="36"
+                        rows="3"
+                        required
                         >
                       </p>
                       <p class="line-item-property__field">
@@ -651,8 +653,19 @@
                           <option value="Doré">Doré</option>
                         </select>
                       </p>
+                      <div id="customizationPreview"></div>
                     {% endif %}
-
+                    <script type="text/javascript">
+                      $(function() {
+                        $('#customizationPreview').html("VOTRE\nNOM\nICI");
+                        $('#customizationTextField').on('change keyup paste', function(e) {
+                            var lines = $(this).val().split("\n").length;
+                            if(lines < 4) {
+                                $('#customizationPreview').html($(this).val());
+                            }
+                        });
+                    });
+                      </script>
                     <input
                       type="hidden"
                       name="id"
