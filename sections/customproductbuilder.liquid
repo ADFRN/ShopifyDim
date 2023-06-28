@@ -1,0 +1,15 @@
+{% comment %} == BEGIN CUSTOM PRODUCT BUILDER GENERATED CODE. DO NOT EDIT OR REMOVE. == {% endcomment %}
+
+{% if product.type == 'cpb_product' %}
+    {{ 'customproductbuilder.css' | asset_url | stylesheet_tag }}
+    {{ 'customproductbuilder.js' | asset_url | script_tag }}
+{% endif %}
+
+{% comment %} == END CUSTOM PRODUCT BUILDER GENERATED CODE. DO NOT EDIT OR REMOVE. == {% endcomment %}
+
+{% schema %}
+  {
+    "name": "customproductbuilder",
+    "settings": []
+  }
+{% endschema %}
