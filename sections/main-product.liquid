@@ -655,7 +655,8 @@
                       </p>
                       <div class="preview">
                         <p class="previewTitle">Prévisualisation</p>
-                        <p id="customizationPreview"></p>
+                        <p id="customizationPreview" style="text-align: center;
+                        font-size: 50px;"></p>
                       </div>
 
 
@@ -679,6 +680,9 @@
                           customizationPreview.innerHTML = customizationTextFieldValue;
                           customizationPreview.style.color = couleurValue;
                           customizationPreview.style.fontFamily = typoValue;
+                          if (couleurValue == "white") {
+                            customizationPreview.style.background = "black";
+                          }
                         }
 
                         typoSelect.addEventListener("change", updatePreview);
