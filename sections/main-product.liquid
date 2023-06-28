@@ -656,19 +656,17 @@
                       <div id="customizationPreview"></div>
                     {% endif %}
                     <script type="text/javascript">
-                        <script
-                        src="https://code.jquery.com/jquery-3.7.0.min.js"
-                        integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="
-                        crossorigin="anonymous">
-                        </script>
-                      $(function() {
-                        $('#customizationPreview').html("VOTRE\nNOM\nICI");
-                        $('#customizationTextField').on('change keyup paste', function(e) {
-                            var lines = $(this).val().split("\n").length;
-                            if(lines < 4) {
-                                $('#customizationPreview').html($(this).val());
-                            }
-                        });
+                    document.addEventListener("DOMContentLoaded", function() {
+                      var customizationPreview = document.getElementById("customizationPreview");
+                      customizationPreview.innerHTML = "VOTRE\nNOM\nICI";
+                    
+                      var customizationTextField = document.getElementById("customizationTextField");
+                      customizationTextField.addEventListener("input", function() {
+                        var lines = this.value.split("\n").length;
+                        if (lines < 4) {
+                          customizationPreview.innerHTML = this.value;
+                        }
+                      });
                     });
                       </script>
                     <input
