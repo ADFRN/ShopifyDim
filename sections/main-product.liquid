@@ -619,7 +619,7 @@
                         <label for="texte-de-personnalisation">Texte de Personnalisation</label>
                         <input
                           id="customizationTextField"
-                          class="border-2 bg-gray-800 border-slate-600 rounded-md block w-full placeholder-slate-400 text-white font-semibold uppercase resize-none"
+                          class="border-2 bg-gray-800 border-slate-600 rounded-md block w-full placeholder-slate-400 text-white font-semibold"
                           placeholder="Votre nom, pseudo, surnom, le prénom de votre maman ici"
                           maxLength="36"
                           rows="3"
@@ -659,23 +659,26 @@
                         var customizationPreview = document.getElementById("customizationPreview");
                         var typoSelect = document.getElementById("typo");
                         var couleurSelect = document.getElementById("couleur");
-                      
-                        // fonction pour mettre à jour la div customizationPreview
+
                         function updatePreview() {
                           var typoValue = document.getElementById("typo").value;
+                          if typoValue == "Ballantine" {
+                            typoValue = "Ballantine Regular";
+                          } else if typoValue == "Chancery" {
+                            typoValue = "Chancery Regular";
+                          } else if typoValue == "Times" {
+                            typoValue = "Times New Roman";
+                          }
                           var couleurValue = document.getElementById("couleur").value;
                           var customizationTextFieldValue = document.getElementById("customizationTextField").value;
                           customizationPreview.innerHTML = customizationTextFieldValue;
-                          customizationPreview.style.fontFamily = typoValue;
+                          customizationPreview.style.font-family = typoValue;
                           customizationPreview.style.color = couleurValue;
                         }
                       
-                        // mettre à jour la div customizationPreview lorsqu'il y a un changement dans les sélecteurs
                         typoSelect.addEventListener("change", updatePreview);
                         couleurSelect.addEventListener("change", updatePreview);
                         document.getElementById("customizationTextField").addEventListener("input", updatePreview);
-                      
-                        // mettre à jour la div customizationPreview avec les valeurs par défaut au chargement de la page
                         updatePreview();
                       });
                         </script>

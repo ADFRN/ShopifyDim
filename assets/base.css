@@ -2886,3 +2886,25 @@ details-disclosure > details {
 .font-body-bold {
   font-weight: var(--font-body-weight-bold);
 }
+
+/* New Font */
+
+@font-face {
+  font-family: "Times Regular";
+  src: url("Times Regular.woff2") format("woff2"),
+  url("Times Regular.woff") format("woff");
+  }
+
+  @font-face {
+    font-family: "Ballantines Regular";
+    src: url("Ballantines Regular.woff2") format("woff2"),
+    url("Ballantines Regular.woff") format("woff");
+    }
+
+    @font-face {
+      font-family: "chancery-regular";
+      src: url("chancery-regular.woff2") format("woff2"),
+      url("chancery-regular.woff") format("woff");
+      }
+
+/* New Font */
