@@ -662,8 +662,8 @@
                       
                         // fonction pour mettre à jour la div customizationPreview
                         function updatePreview() {
-                          var typoValue = typoSelect.value;
-                          var couleurValue = couleurSelect.value;
+                          var typoValue = document.getElementById("typo").value;
+                          var couleurValue = document.getElementById("couleur").value;
                           var customizationTextFieldValue = document.getElementById("customizationTextField").value;
                           customizationPreview.innerHTML = customizationTextFieldValue;
                           customizationPreview.style.fontFamily = typoValue;
