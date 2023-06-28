@@ -3,9 +3,7 @@
   <head>
     <link rel="stylesheet" href="https://obscure-escarpment-2240.herokuapp.com/stylesheets/bcpo-front.css">
     <script>
-      var bcpo_product = {{ product | json }};{% if product.metafields.bcpo.bcpo_data %}
-        var bcpo_data = {{ product.metafields.bcpo.bcpo_data }};{% endif %}{% if shop.metafields.bcpo.bcpo_settings %}
-        var bcpo_settings = {{ shop.metafields.bcpo.bcpo_settings }};{% endif %}var inventory_quantity = [];{% for v in product.variants %}inventory_quantity.push({{v.inventory_quantity}});{% endfor %}if (bcpo_product) {
+      var bcpo_product = {{ product | json }};{% if product.metafields.bcpo.bcpo_data %}var bcpo_data = {{ product.metafields.bcpo.bcpo_data }};{% endif %}{% if shop.metafields.bcpo.bcpo_settings %}var bcpo_settings = {{ shop.metafields.bcpo.bcpo_settings }};{% endif %}var inventory_quantity = [];{% for v in product.variants %}inventory_quantity.push({{v.inventory_quantity}});{% endfor %}if (bcpo_product) {
         for (var i = 0; i < bcpo_product.variants.length; i += 1) {
           bcpo_product.variants[i].inventory_quantity = inventory_quantity[i];
         }
@@ -61,12 +59,12 @@
     {{ content_for_header }}
     <script id="vopo-head">(function () {
       if (((document.documentElement.innerHTML.includes('asyncLoad') && !document.documentElement.innerHTML.includes('\\/obscure' + '-escarpment-2240')) || (window.bcpo && bcpo.disabled)) && !window.location.href.match(/[&?]yesbcpo/)) return;
-      	var script = document.createElement('script');
-      	var reg = new RegExp('\\\\/\\\\/cdn\\.shopify\\.com\\\\/proxy\\\\/[a-z0-9]+\\\\/obscure-escarpment-2240\\.herokuapp\\.com\\\\/js\\\\/best_custom_product_options\\.js[^"]+');
-      	var match = reg.exec(document.documentElement.innerHTML);
-      	script.src = match[0].split('\\').join('').replace('%3f', '?').replace('u0026', '&');
-      	var vopoHead = document.getElementById('vopo-head'); vopoHead.parentNode.insertBefore(script, vopoHead);
-      })();
+            	var script = document.createElement('script');
+            	var reg = new RegExp('\\\\/\\\\/cdn\\.shopify\\.com\\\\/proxy\\\\/[a-z0-9]+\\\\/obscure-escarpment-2240\\.herokuapp\\.com\\\\/js\\\\/best_custom_product_options\\.js[^"]+');
+            	var match = reg.exec(document.documentElement.innerHTML);
+            	script.src = match[0].split('\\').join('').replace('%3f', '?').replace('u0026', '&');
+            	var vopoHead = document.getElementById('vopo-head'); vopoHead.parentNode.insertBefore(script, vopoHead);
+            })();
     </script>
 
     {%- liquid
@@ -142,17 +140,25 @@
         ;
 
         --gradient-base-background-1: {% if settings.gradient_background_1 != blank %}
-          {{ settings.gradient_background_1 }}{% else %}
-          {{ settings.colors_background_1 }}{% endif %};
+          {{ settings.gradient_background_1 }}
+        {% else %}
+          {{ settings.colors_background_1 }}
+        {% endif %};
         --gradient-base-background-2: {% if settings.gradient_background_2 != blank %}
-          {{ settings.gradient_background_2 }}{% else %}
-          {{ settings.colors_background_2 }}{% endif %};
+          {{ settings.gradient_background_2 }}
+        {% else %}
+          {{ settings.colors_background_2 }}
+        {% endif %};
         --gradient-base-accent-1: {% if settings.gradient_accent_1 != blank %}
-          {{ settings.gradient_accent_1 }}{% else %}
-          {{ settings.colors_accent_1 }}{% endif %};
+          {{ settings.gradient_accent_1 }}
+        {% else %}
+          {{ settings.colors_accent_1 }}
+        {% endif %};
         --gradient-base-accent-2: {% if settings.gradient_accent_2 != blank %}
-          {{ settings.gradient_accent_2 }}{% else %}
-          {{ settings.colors_accent_2 }}{% endif %};
+          {{ settings.gradient_accent_2 }}
+        {% else %}
+          {{ settings.colors_accent_2 }}
+        {% endif %};
 
         --media-padding: {{ settings.media_padding }}
         px;
@@ -236,8 +242,10 @@
         --spacing-sections-desktop: {{ settings.spacing_sections }}
         px;
         --spacing-sections-mobile: {% if settings.spacing_sections < 24 %}
-          {{ settings.spacing_sections }}{% else %}
-          {{ settings.spacing_sections | times: 0.7 | round | at_least: 20 }}{% endif %}px;
+          {{ settings.spacing_sections }}
+        {% else %}
+          {{ settings.spacing_sections | times: 0.7 | round | at_least: 20 }}
+        {% endif %}px;
 
         --grid-desktop-vertical-spacing: {{ settings.spacing_grid_vertical }}
         px;
@@ -269,10 +277,12 @@
         --buttons-radius: {{ settings.buttons_radius }}
         px;
         --buttons-radius-outset: {% if settings.buttons_radius > 0 %}
-          {{ settings.buttons_radius | plus: settings.buttons_border_thickness }}{% else %}
+          {{ settings.buttons_radius | plus: settings.buttons_border_thickness }}
+        {% else %}
           0{% endif %}px;
         --buttons-border-width: {% if settings.buttons_border_opacity > 0 %}
-          {{ settings.buttons_border_thickness }}{% else %}
+          {{ settings.buttons_border_thickness }}
+        {% else %}
           0{% endif %}px;
         --buttons-border-opacity: {{ settings.buttons_border_opacity | divided_by: 100.0 }}
         ;
@@ -302,14 +312,16 @@
         --inputs-shadow-horizontal-offset: {{ settings.inputs_shadow_horizontal_offset }}
         px;
         --inputs-margin-offset: {% if settings.inputs_shadow_vertical_offset != 0 and settings.inputs_shadow_opacity > 0 %}
-          {{ settings.inputs_shadow_vertical_offset | abs }}{% else %}
+          {{ settings.inputs_shadow_vertical_offset | abs }}
+        {% else %}
           0{% endif %}px;
         --inputs-shadow-vertical-offset: {{ settings.inputs_shadow_vertical_offset }}
         px;
         --inputs-shadow-blur-radius: {{ settings.inputs_shadow_blur }}
         px;
         --inputs-radius-outset: {% if settings.inputs_radius > 0 %}
-          {{ settings.inputs_radius | plus: settings.inputs_border_thickness }}{% else %}
+          {{ settings.inputs_radius | plus: settings.inputs_border_thickness }}
+        {% else %}
           0{% endif %}px;
 
         --variant-pills-radius: {{ settings.variant_pills_radius }}
@@ -400,10 +412,6 @@
     <script>
       Weglot.initialize({api_key: 'wg_c5a992d587bca879024527a22eb847938'});
     </script>
-    <script
-      src="https://code.jquery.com/jquery-3.7.0.min.js"
-      integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="
-      crossorigin="anonymous"></script>
 
   </head>
   <body class="gradient">
