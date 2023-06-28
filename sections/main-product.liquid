@@ -659,8 +659,6 @@
                         var customizationPreview = document.getElementById("customizationPreview");
                         var typoSelect = document.getElementById("typo");
                         var couleurSelect = document.getElementById("couleur");
-                        console.log("typoSelect", typoSelect);
-                        console.log("couleurSelect", couleurSelect);
 
                         function updatePreview() {
                           var typoValue = document.getElementById("typo").value;
@@ -674,6 +672,8 @@
                           var couleurValue = document.getElementById("couleur").value;
                           var customizationTextFieldValue = document.getElementById("customizationTextField").value;
                           customizationPreview.innerHTML = customizationTextFieldValue;
+                          customizationPreview.style.color = couleurValue;
+                          customizationPreview.style.font-family = typoValue;
                         }
 
                         typoSelect.addEventListener("change", updatePreview);
