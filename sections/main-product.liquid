@@ -628,15 +628,15 @@
                         >
                       </p>
                       <p class="line-item-property__field">
-                        <label>Typo</label><br>
+                        <label for="typo">Typo</label><br>
                         <select required class="required" id="typo" name="properties[Typo]">
-                          <option value="Ballantine">Ballantine</option>
+                          <option value="Ballentine">Ballantine</option>
                           <option value="Chancery">Chancery</option>
                           <option value="Times">Times</option>
                         </select>
                       </p>
                       <p class="line-item-property__field">
-                        <label>Couleur</label><br>
+                        <label for="couleur">Couleur</label><br>
                         <select required class="required" id="couleur" name="properties[Couleur]">
                           <option value="black">Noir</option>
                           <option value="darkgrey">Gris Foncé</option>
@@ -664,20 +664,18 @@
 
                         function updatePreview() {
                           var typoValue = document.getElementById("typo").value;
-                          if typoValue == "Ballantine" {
+                          if (typoValue == "Ballantine") {
                             typoValue = "Ballantines Regular";
-                          } else if typoValue == "Chancery" {
+                          } else if (typoValue == "Chancery") {
                             typoValue = "chancery-regular";
-                          } else if typoValue == "Times" {
+                          } else if (typoValue == "Times") {
                             typoValue = "Times Regular";
                           }
                           var couleurValue = document.getElementById("couleur").value;
                           var customizationTextFieldValue = document.getElementById("customizationTextField").value;
                           customizationPreview.innerHTML = customizationTextFieldValue;
-                          console.log("typoSelect", typoSelect);
-                        console.log("couleurSelect", couleurSelect);
                         }
-                        console.log("customizationPreview", customizationPreview)
+
                         typoSelect.addEventListener("change", updatePreview);
                         couleurSelect.addEventListener("change", updatePreview);
                         document.getElementById("customizationTextField").addEventListener("input", updatePreview);
