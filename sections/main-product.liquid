@@ -653,10 +653,6 @@
                       </p>
                       <div class="preview">
                         <p class="previewTitle" style="margin-bottom: 0px;">Prévisualisation</p>
-                        <a href="{{ product.url }}"class="link product__view-details animate-arrow" style="margin-bottom: 15px;">
-                          Afficher tous les details pour accèder a la prévisualisation
-                        {% render 'icon-arrow' %}
-                        </a>
                         <p id="customizationPreview" style="text-align: center;
                         font-size: 50px;"></p>
                       </div>
@@ -855,7 +851,6 @@
   {%- endfor -%}
 
   {%- if product.media.size > 0 -%}
-    <script src="{{ 'update-preview.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'product-modal.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'media-gallery.js' | asset_url }}" defer="defer"></script>
   {%- endif -%}
