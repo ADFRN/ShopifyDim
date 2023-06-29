@@ -2890,15 +2890,15 @@ details-disclosure > details {
 /* New Font */
 
 @font-face {
-  font-family: "Times Regular";
-  src: url("Times Regular.woff2") format("woff2"),
-  url("Times Regular.woff") format("woff");
+  font-family: "Times-regular";
+  src: url("Times-regular.woff2") format("woff2"),
+  url("Times-regular.woff") format("woff");
   }
 
   @font-face {
-    font-family: "Ballantines";
-    src: url("Ballantines.woff2") format("woff2"),
-    url("Ballantines.woff") format("woff");
+    font-family: "Ballantine";
+    src: url("Ballantine.woff2") format("woff2"),
+    url("Ballantine.woff") format("woff");
     }
 
     @font-face {
