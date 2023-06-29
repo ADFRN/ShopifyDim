@@ -19,6 +19,7 @@ document.addEventListener("DOMContentLoaded", function() {
       customizationPreview.style.fontFamily = typoValue;
       if (couleurValue == "white") {
         customizationPreview.style.background = "black";
+        customizationPreview.style.borderRadius = "10px";
       } else {
         customizationPreview.style.background = "white";
       }
