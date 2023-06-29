@@ -16,9 +16,9 @@ document.addEventListener("DOMContentLoaded", function() {
       if (couleurValue == "Noir") {
         couleurValue = "black";
       } else if (couleurValue == "Gris Foncé") {
-        couleurValue = "darkgray";
+        couleurValue = "grey";
       } else if (couleurValue == "Gris Moyen") {
-        couleurValue = "gray";
+        couleurValue = "darkgray";
       } else if (couleurValue == "Blanc") {
         couleurValue = "white";
       } else if (couleurValue == "Bleu Marine") {
@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function() {
       } else if (couleurValue == "Doré") {
         couleurValue = "gold";
       }
-      
+
       var customizationTextFieldValue = document.getElementById("customizationTextField").value;
       customizationPreview.innerHTML = customizationTextFieldValue;
       customizationPreview.style.color = couleurValue;
