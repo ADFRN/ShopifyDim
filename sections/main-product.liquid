@@ -499,7 +499,9 @@
                       <legend class="form__label">{{ option.name }}</legend>
                       {%- for value in option.values -%}
                         <script>
-                          console.log({{ option.name }})
+                          console.log("option.Couleur.values"{{ option.Couleur.values }})
+                          console.log("option.selected_value"{{ option.selected_value }})
+                          console.log("option.position"{{ option.position }})
                           </script>
                         <input
                             type="radio"
