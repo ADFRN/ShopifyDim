@@ -2887,7 +2887,7 @@ details-disclosure > details {
   font-weight: var(--font-body-weight-bold);
 }
 
-/* New Font */
+/* Preview Font */
 
 @font-face {
   font-family: "Times-regular";
@@ -2907,4 +2907,4 @@ details-disclosure > details {
       url("chancery-regular.woff") format("woff");
       }
 
-/* New Font */
+/* Preview Font */
