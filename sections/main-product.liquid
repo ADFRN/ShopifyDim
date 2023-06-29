@@ -652,13 +652,13 @@
                         </select>
                       </p>
                       <div class="preview">
-                        <p class="previewTitle">Prévisualisation</p>
-                        <a href="{{ product.url }}"class="link product__view-details animate-arrow">
+                        <p class="previewTitle" style="margin-bottom: 0px;">Prévisualisation</p>
+                        <a href="{{ product.url }}"class="link product__view-details animate-arrow" style="margin-bottom: 15px;">
                           Afficher tous les details pour accèder a la prévisualisation
                         {% render 'icon-arrow' %}
                         </a>
                         <p id="customizationPreview" style="text-align: center;
-                        font-size: 50px;"></p>
+                        font-size: 50px;">Brod'line</p>
                       </div>
                       <script src="{{ 'update-preview.js' | asset_url }}" type="text/javascript"></script>
                     {% endif %}
