@@ -198,36 +198,24 @@
         "type": "shopify:\/\/apps\/etranslate-language-translate\/blocks\/floating-selector\/35c05b0e-4f05-4fc9-adc7-77b6ccb6b2ca",
         "disabled": false,
         "settings": {
-          "status": true,
-          "selector_type": "language",
-          "auto_switch_language": "1",
-          "auto_switch_location_currency": false,
-          "choose_language_selector": "embedded_selector",
-          "position_lr": "left",
-          "position_tb": "fixed_top",
-          "style_of_the_selector_all": "links",
-          "labels_type": "language_code",
-          "background_color": "#ffffff",
-          "font_color": "#000000",
-          "background_opacity": 100,
-          "mobile_choose_language_selector": "floating_selector",
-          "mobile_position_lr": "left",
-          "mobile_position_tb": "fixed_bottom",
-          "mobile_vertical": 12,
-          "mobile_horizontal": 12,
-          "mobile_style_of_the_selector_all": "dropdown",
-          "mobile_labels_type": "language_name",
-          "mobile_background_color": "#ffffff",
-          "mobile_font_color": "#000000",
-          "mobile_background_opacity": 100,
-          "vertical": 12,
-          "horizontal": 12
         }
       },
       "7924418359578431505": {
         "type": "shopify:\/\/apps\/seoant-seo-image-optimizer\/blocks\/seoant-core\/8e57283b-dcb0-4f7b-a947-fb5c57a0d59d",
         "disabled": false,
         "settings": {
+        }
+      },
+      "15683396631634586217": {
+        "type": "shopify:\/\/apps\/inbox\/blocks\/chat\/841fc607-4181-4ad1-842d-e24d7f8bad6b",
+        "disabled": false,
+        "settings": {
+          "button_color": "#000000",
+          "button_icon": "chat_bubble",
+          "button_text": "chat_with_us",
+          "button_horizontal_position": "bottom_right",
+          "button_vertical_position": "lowest",
+          "greeting_message": "👋 Bonjour, écrivez‑nous si vous avez des questions. Nous serons ravis de vous aider !"
         }
       }
     }
